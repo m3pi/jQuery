@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Video 1</title>
+	<title>Lesson 1</title>
 
 	<!-- colorear de rojo la lsita de elementos -->
 	<style>
-	ul li {color: red;}
-	//crear una variable para dar estilo A los elementos
-	.emphasis {color: green;}
+	ul li { color: red;}
+	/*crear una variable para dar estilo A los elementos*/
+	.emphasis { color: green;}
 	</style>
 
 </head>
@@ -25,11 +25,15 @@
 		//mostrar los elementos en la consola
 		// var lis = jQuery('ul li');
 		// console.log(lis);
+
 		//dar un color diferente a los elementos que ya tienen un color
 		//agregando el nuevo color desde el script
 		//jQuery('ul li').css('color','green');
+
 		//agregando el nuevo color creado el el style
-		jQuery('ul li').addClass('emphasis');
+		//jQuery('ul li').addClass('emphasis');
+		//lo siguiente es lo mismo que la linea anterior
+		$('ul li').addClass('emphasis');
 	</script>
 
 </body>
