@@ -3,6 +3,27 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Lesson 2</title>
+
+	<!-- cuando de quiere que el script vaya al principio -->
+	<script src="../js/jquery-2.2.1.js"></script>
+	
+	<!-- Se crea el estilo para -->
+	<style>
+	.emphasis {font-weight: bold;}
+	</style>
+
+	<script>
+		//2. otra manera
+		$(function(){
+			$('li:first-child').addClass('emphasis');
+		});
+
+		// 1. para poner el script en esta parte es necesario
+		// $(document).ready(function () {
+		// 	$('li:first-child').addClass('emphasis');
+		// });
+	</script>
+
 </head>
 <body>
 	<ul>
@@ -10,6 +31,14 @@
 		<li>hello</li>
 		<li>hello</li>
 	</ul>
-	<script href="../js/jquery-2.2.1.js"></script>
+
+	<!-- 
+	<script src="../js/jquery-2.2.1.js"></script>
+	<script>
+		// vamos a poner de color negrita al primer hijo de <ul> (el primer <li>)
+		$('li:first-child').addClass('emphasis');
+	</script>
+	 -->
+
 </body>
 </html>
