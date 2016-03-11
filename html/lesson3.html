@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Lesson 3: The Basics of Querying the Dom</title>
+
+	<style>
+	/*2. colorea de color negro la etiqueta <li> dento del segundo <ul>*/
+	/*li {color: black;}*/
+
+	/*6. class emphasis for the find nambur 5*/
+	/*2.1*/
+	/*.emphasis {color: green;}*/
+
+	/*2.4. probar borrar la clase container*/
+	.container {color: green;}
+
+
+	/*ul.emphasis li{
+
+	}*/
+	/* 1. para colorear de rojo todas las etiquetas <li> dentro del primer <ul>*/
+	/*ul.emphasis > li{
+		color: red;
+	}*/
+	</style>
+
+</head>
+<body>
+	<div class="container">
+		<h1>Welcome to My Website</h1>
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum facere porro velit iure, aliquam tempore nemo? Reiciendis illo cupiditate maxime. Iure, perferendis error temporibus numquam ea excepturi possimus tenetur explicabo!
+		</p>
+		
+		<!-- 2.6. Agregamos esto para para poder probar el punto 26.de mas abajo -->
+		<div class="container">
+
+			<ul class="emphasis container">
+				<li>item 1</li>
+				<li>item 2</li>
+				<li>item 3</li>
+				<li>
+					<ul>
+						<li>hello fron the nest.</li>
+						<li>hello fron the nest.</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+
+	</div>
+
+	<script src="../js/jquery-2.2.1.js"></script>
+
+	<script>
+		 // 3. CHILDREN: colorear de color verde los hijos del primer <ul> con clase emphasis
+		 // $('ul.emphasis').children('li').css('color','green');
+
+		 // 4. FIND: colorear de color verde todos los <li>
+		 // $('ul.emphasis').find('li').css('color','green');
+
+		 // 5. FIND AND FIRST-CHILD: colorear de color verde todos las primeras etiquetas <li>
+		 // $('ul.emphasis').find('li:first-child').addClass('emphasis');
+
+		 // 7. FIND AND NTH-CHILD(1): colorear de color verde las primeras etiquetas <li>. NTH-CHILD(1) se puede cambiar el numero de acuerdo a la posicion del elemento que necesitamos usar
+		 // $('ul.emphasis').find('li:nth-child(1)').addClass('emphasis');
+
+		 // 8. CHILDREN: tomar solo la primera etiqueta <li> de <ul> con clase="emphasis" y colorearla de verde
+		 // $('ul.emphasis').children('li:first').addClass('emphasis');
+		 // $('ul.emphasis').children('li:first-child').addClass('emphasis');
+
+		 // 9. CHILDREN AND FIRST: tomar solo la primera etiqueta <li> de <ul> con clase="emphasis" y colorearla de verde
+		 // $('ul.emphasis').children('li').first().addClass('emphasis');
+
+		 // 10. CHILDREN AND TEXT: reemplazar/agregar el texto de la etiqueta <li> (2 :cuenta desde el 1) de la etiqueta <ul class="emphasis/> por el texto "Added with jQuery"
+		 // $('ul.emphasis').children('li:nth-child(2)').text('Added with jQuery');
+
+		 // 11. CHILDREN AND EQ: reemplazar/agregar el texto de la etiqueta <li> (2 :cuenta desde el 0) de la etiqueta <ul class="emphasis/> por el texto "Added with jQuery"
+		 // $('ul.emphasis').children('li').eq(2).text('Added with jQuery');
+
+		 // 12. CHILDREN(), EQ() AND NEXT(): next() agrega/cambia el texto del siguiente elemento
+		 // $('ul.emphasis').children('li').eq(2).next().text('Added with jQuery');
+		 // seria la forma de ordenarlo
+		 // $('ul.emphasis')
+		 // 	.children('li')
+		 // 		.eq(2).prev()
+		 // 		.text('Added with jQuery');
+
+		 // otra manera para remplazar/agregar un elemento de una pocicion especifica (cuenta desde el 1)
+		 // $('ul.emphasis li:nth-child(2)').text('otra manera de agrar texto');
+
+		 //------------------------------------------------------------------------------------------------------------------
+
+		 // 2.2. para hacer referencia al padre
+		 // $('li').parent();
+
+		 // 2.3. remover la clase emphasis del padre de la etiqueta <li>
+		 // $('li').parent().removeClass('emphasis');
+
+		 // 2.4 remover la clase container
+		 // $('li').parents('.container').removeClass('container');
+
+		 // 2.5 CLOSEST: remover la clase container
+		 // $('li').closest('div.container').removeClass('container');
+
+		 // 2.6. Se tienen dos padres "container"
+		 console.log($('ul').parents('container'));
+		 console.log($('ul').closest('container'));
+
+	</script>
+
+</body>
+</html>
