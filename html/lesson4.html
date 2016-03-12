@@ -3,15 +3,47 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Lesson 4: Events 101</title>
+	
+	<link rel="stylesheet" href="../css/day.css">
+
 </head>
 <body>
 	
 	<h1>My Website</h1>
 
+	<button>Day</button>
+	<button>Night</button>
+
 	<script src="../js/jquery-2.2.1.js"></script>
 
 	<script>
-		
+		(function(){
+			$('button').click(function(){
+				// console.log('Button was clicked');
+
+				// para saber en que elemento se esta haciendo click
+				// console.log(this);
+				//console.log($(this));
+
+				// cambiar el texto del boton por "changed"
+				// $(this).text('changed');
+
+				// --------------------------------------------------------
+				
+				// para referenciar al css night.css
+				// $('link').attr('href','../css/night.css');
+
+				// para saber que boton estoy haciendo click en consola, no cuenta los clicks
+				// var stylesheet = $(this).text();
+				// cuenta los clicks
+				var stylesheet = $(this).text().toLowerCase();
+				console.log(stylesheet);
+				// intercalar segun se haga click, toma el texto de donde de hace click
+				$('link').attr('href', '../css/'+ stylesheet + '.css');
+
+
+			});
+		})();
 	</script>
 	
 </body>
