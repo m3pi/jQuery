@@ -11,8 +11,13 @@
 	
 	<h1>My Website</h1>
 
-	<button>Day</button>
-	<button>Night</button>
+	<!-- 1 -->
+	<!-- <button>Day</button>
+	<button>Night</button> -->
+
+	<!-- 2 -->
+	<button data-file="day">Day</button>
+	<button data-file="night">Night</button>
 
 	<script src="../js/jquery-2.2.1.js"></script>
 
@@ -30,16 +35,27 @@
 
 				// --------------------------------------------------------
 				
-				// para referenciar al css night.css
+				// 1. para referenciar al css night.css
 				// $('link').attr('href','../css/night.css');
 
-				// para saber que boton estoy haciendo click en consola, no cuenta los clicks
+				// 2. para saber que boton estoy haciendo click en consola, no cuenta los clicks
 				// var stylesheet = $(this).text();
 				// cuenta los clicks
-				var stylesheet = $(this).text().toLowerCase();
+				// var stylesheet = $(this).text().toLowerCase();
+				// console.log(stylesheet);
+				// intercalar entre day and night segun se haga click, toma el texto de donde de hace click
+				// $('link').attr('href', '../css/'+ stylesheet + '.css');
+
+				// 3. con data-file
+				// var stylesheet = $(this).attr('data-file');
+				// console.log(stylesheet);
+				// $('link').attr('href', '../css/' +stylesheet+ ".css");
+
+				// 4
+				var link = $('link');
+				var stylesheet = $(this).data('file');
 				console.log(stylesheet);
-				// intercalar segun se haga click, toma el texto de donde de hace click
-				$('link').attr('href', '../css/'+ stylesheet + '.css');
+				link.attr('href', '../css/' +stylesheet+ ".css");
 
 
 			});
